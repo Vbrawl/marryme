@@ -1,0 +1,48 @@
+
+.main-body .upper,
+.main-body .bottom {
+    width: 90vw;
+    height: 40vh;
+    
+    position: absolute;
+    left: 50%;
+    
+    transform: translateX(-50%);
+    transform-origin: center bottom;
+    background: white;
+
+    box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.26);
+    -webkit-box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.26);
+    -moz-box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.26);
+}
+
+.main-body .bottom.unfold {
+    animation: slide-unfold 2s forwards 50ms;
+}
+
+.button-box {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.unfold-button { /* This is an SVG object. */
+    width: 64px;
+    height: 64px;
+    border-radius: .7rem;
+    cursor: pointer;
+}
+.unfold-button:hover { background: rgba(0,0,0,0.16); }
+
+@keyframes slide-unfold {
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translateX(-50%) rotateX(180deg);
+    }
+}
