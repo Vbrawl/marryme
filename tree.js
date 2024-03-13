@@ -11,22 +11,22 @@
          * Search the element in a pre-order fashion.
          * NOTE: Only checks the immediate children of this element + this element.
          * @param {Function} fcheck A function that checks a value.
-         * @returns boolean
+         * @returns {TreeElement|null} The element that was found.
          */
         immediateCustomSearch(fcheck) {
-            if(fcheck(this.value)) { return true; }
+            if(fcheck(this.value)) { return this; }
             for (let index = 0; index < this.children.length; index++) {
                 const child = this.children[index];
-                if(fcheck(child.value)) { return true; }
+                if(fcheck(child.value)) { return child; }
             }
-            return false;
+            return null;
         }
 
         /**
          * Search the element in a pre-order fashion.
          * NOTE: Only checks the immediate children of this element + this element.
          * @param {*} needle Check if needle is found.
-         * @returns boolean
+         * @returns {TreeElement|null} The element that was found.
          */
         immediateSearch(needle) {
             return this.immediateCustomSearch(( val ) => { return (val === needle); });
@@ -45,8 +45,8 @@
     }
 
 
-    tree.testTree = new tree.TreeElement(1)
-        .addChild(new tree.TreeElement(2).addChild(new tree.TreeElement(3)))
-        .addChild(new tree.TreeElement(4))
-        .addChild(new tree.TreeElement(5));
+    tree.testTree = new tree.TreeElement("Hello World")
+        .addChild(new tree.TreeElement("Hello2").addChild(new tree.TreeElement("Hello3")))
+        .addChild(new tree.TreeElement("Hello4"))
+        .addChild(new tree.TreeElement("Hello5"));
 }(tree = window.tree || {}));
