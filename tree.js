@@ -31,12 +31,22 @@
         immediateSearch(needle) {
             return this.immediateCustomSearch(( val ) => { return (val === needle); });
         }
+
+        /**
+         * Adds a child to the right-most position in the node.
+         * NOTE: Allows chaining.
+         * @param {TreeElement} childElement The child to add to the tree.
+         * @returns {TreeElement} The current node, this allows chaining.
+         */
+        addChild(childElement) {
+            this.children.push(childElement);
+            return this;
+        }
     }
 
 
-    tree.testTree = new tree.TreeElement(1);
-    tree.testTree.children.push(new tree.TreeElement(2))
-    tree.testTree.children.push(new tree.TreeElement(3))
-    tree.testTree.children.push(new tree.TreeElement(4))
-    tree.testTree.children[0].children.push(new tree.TreeElement(5))
+    tree.testTree = new tree.TreeElement(1)
+        .addChild(new tree.TreeElement(2).addChild(new tree.TreeElement(3)))
+        .addChild(new tree.TreeElement(4))
+        .addChild(new tree.TreeElement(5));
 }(tree = window.tree || {}));
