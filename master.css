@@ -2,7 +2,7 @@
     --main-body--bottom---background: #ffeaee;
     --main-body--upper---background: #f2d6ff;
     --main-body--bottom---box-shadow: 0px 5px 10px 4px rgba(0,0,0,0.26);
-    --main-body--upper---box-shadow: 0px -5px 10px 4px rgba(0,0,0,0.26)
+    --main-body--upper---box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.26)
 }
 
 /**
@@ -52,7 +52,7 @@
     -webkit-box-shadow: var(--main-body--bottom---box-shadow);
     -moz-box-shadow: var(--main-body--bottom---box-shadow);
 }
-.main-body .bottom.unfold { animation: unfold 2s forwards 50ms; }
+.main-body .bottom.unfold { animation: unfold 4s forwards 50ms; }
 
 .main-body .bottom .button-box { rotate: x 180deg; }
 .main-body .bottom.unfold .button-box { rotate: x 0deg; }
@@ -75,5 +75,6 @@
  */
 @keyframes unfold {
     0% { rotate: x 180deg; }
-    100% { rotate: x 0deg; }
+    50% { rotate: x 0deg; }
+    100% { rotate: x -90deg; }
 }
