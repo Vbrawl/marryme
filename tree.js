@@ -1,17 +1,17 @@
 
 
 (function(tree) {
-    tree.TreeElement = class {
+    tree.TreeNode = class {
         constructor(value = null) {
             this.value = value;
             this.children = [];
         }
 
         /**
-         * Search the element in a pre-order fashion.
-         * NOTE: Only checks the immediate children of this element + this element.
+         * Search the node in a pre-order fashion.
+         * NOTE: Only checks the immediate children of this node + this node.
          * @param {Function} fcheck A function that checks a value.
-         * @returns {TreeElement|null} The element that was found.
+         * @returns {TreeNode|null} The node that was found.
          */
         immediateCustomSearch(fcheck) {
             if(fcheck(this.value)) { return this; }
@@ -23,10 +23,10 @@
         }
 
         /**
-         * Search the element in a pre-order fashion.
-         * NOTE: Only checks the immediate children of this element + this element.
+         * Search the node in a pre-order fashion.
+         * NOTE: Only checks the immediate children of this node + this node.
          * @param {*} needle Check if needle is found.
-         * @returns {TreeElement|null} The element that was found.
+         * @returns {TreeNode|null} The node that was found.
          */
         immediateSearch(needle) {
             return this.immediateCustomSearch(( val ) => { return (val === needle); });
@@ -35,11 +35,11 @@
         /**
          * Adds a child to the right-most position in the node.
          * NOTE: Allows chaining.
-         * @param {TreeElement} childElement The child to add to the tree.
-         * @returns {TreeElement} The current node, this allows chaining.
+         * @param {TreeNode} childNode The child to add to the tree.
+         * @returns {TreeNode} The current node, this allows chaining.
          */
-        addChild(childElement) {
-            this.children.push(childElement);
+        addChild(childNode) {
+            this.children.push(childNode);
             return this;
         }
     }
