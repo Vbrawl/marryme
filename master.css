@@ -1,3 +1,9 @@
+:root {
+    --main-body--bottom---background: pink;
+    --main-body--bottom---box-shadow: 0px 5px 10px 4px rgba(0,0,0,0.26);
+    --main-body--upper---box-shadow: 0px -5px 10px 4px rgba(0,0,0,0.26)
+}
+
 /**
  * Setup the button-box styling.
  */
@@ -21,10 +27,6 @@
     box-sizing: content-box;
     width: 90vw;
     height: 80vh;
-
-    box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.26);
-    -webkit-box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.26);
-    -moz-box-shadow: 0px 0px 10px 4px rgba(0,0,0,0.26);
 }
 
 .main-body .upper,
@@ -33,9 +35,20 @@
     height: 50%;
 }
 
+.main-body .upper {
+    box-shadow: var(--main-body--upper---box-shadow);
+    -webkit-box-shadow: var(--main-body--upper---box-shadow);
+    -moz-box-shadow: var(--main-body--upper---box-shadow);
+}
+
 .main-body .bottom {
     transform-origin: center top;
     rotate: x 180deg;
+    background: var(--main-body--bottom---background, inherit);
+
+    box-shadow: var(--main-body--bottom---box-shadow);
+    -webkit-box-shadow: var(--main-body--bottom---box-shadow);
+    -moz-box-shadow: var(--main-body--bottom---box-shadow);
 }
 .main-body .bottom.unfold { animation: unfold 2s forwards 50ms; }
 
