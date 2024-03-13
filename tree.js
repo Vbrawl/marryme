@@ -43,10 +43,4 @@
             return this;
         }
     }
-
-
-    tree.testTree = new tree.TreeElement("Hello World")
-        .addChild(new tree.TreeElement("Hello2").addChild(new tree.TreeElement("Hello3")))
-        .addChild(new tree.TreeElement("Hello4"))
-        .addChild(new tree.TreeElement("Hello5"));
 }(tree = window.tree || {}));
