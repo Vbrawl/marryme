@@ -1,5 +1,6 @@
 :root {
-    --main-body--bottom---background: pink;
+    --main-body--bottom---background: #ffeaee;
+    --main-body--upper---background: #f2d6ff;
     --main-body--bottom---box-shadow: 0px 5px 10px 4px rgba(0,0,0,0.26);
     --main-body--upper---box-shadow: 0px -5px 10px 4px rgba(0,0,0,0.26)
 }
@@ -36,6 +37,7 @@
 }
 
 .main-body .upper {
+    background: var(--main-body--upper---background);
     box-shadow: var(--main-body--upper---box-shadow);
     -webkit-box-shadow: var(--main-body--upper---box-shadow);
     -moz-box-shadow: var(--main-body--upper---box-shadow);
