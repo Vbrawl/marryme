@@ -3,6 +3,7 @@
 (function(tree) {
     tree.TreeNode = class {
         constructor(value = null) {
+            this.parent = null;
             this.value = value;
             this.children = [];
         }
@@ -39,6 +40,7 @@
          * @returns {TreeNode} The current node, this allows chaining.
          */
         addChild(childNode) {
+            childNode.parent = this;
             this.children.push(childNode);
             return this;
         }
