@@ -27,13 +27,13 @@
 .main-body {
     box-sizing: content-box;
     width: 90vw;
-    height: 80vh;
+    height: 40vh;
 }
 
 .main-body .upper,
 .main-body .bottom {
     width: 100%;
-    height: 50%;
+    height: 100%;
 }
 
 .main-body .upper {
