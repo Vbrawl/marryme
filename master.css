@@ -1,4 +1,10 @@
-
+/**
+ * Setup the main-body class styling.
+ *
+ * This class consists of ".main-body", ".main-body .upper" and ".main-body .bottom".
+ *
+ * The ".bottom" part has a ".bottom.unfold" form for when it's unfolded.
+ */
 .main-body .upper,
 .main-body .bottom {
     width: 90vw;
@@ -17,9 +23,12 @@
 }
 
 .main-body .bottom.unfold {
-    animation: slide-unfold 2s forwards 50ms;
+    animation: unfold 2s forwards 50ms;
 }
 
+/**
+ * Setup the button-box styling.
+ */
 .button-box {
     display: flex;
     flex-flow: row nowrap;
@@ -29,6 +38,11 @@
     height: 100%;
 }
 
+/**
+ * Setup the unfold-button styling.
+ *
+ * This is an SVG object that should act as a button.
+ */
 .unfold-button { /* This is an SVG object. */
     width: 64px;
     height: 64px;
@@ -37,7 +51,10 @@
 }
 .unfold-button:hover { background: rgba(0,0,0,0.16); }
 
-@keyframes slide-unfold {
+/**
+ * Add an animation for unfolding the main-body.
+ */
+@keyframes unfold {
     0% {
         transform: translateX(-50%) rotate(0deg);
     }
