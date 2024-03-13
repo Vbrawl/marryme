@@ -44,5 +44,16 @@
             this.children.push(childNode);
             return this;
         }
+
+        /**
+         * Adds multiple children to the node.
+         * @param {Array<TreeNode>} childrenNodes An array of children to add to the node.
+         */
+        addChildren(childrenToAdd) {
+            for (let index = 0; index < childrenToAdd.length; index++) {
+                const child = childrenToAdd[index];
+                this.addChild(child);
+            }
+        }
     }
 }(tree = window.tree || {}));
